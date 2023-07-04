@@ -43,3 +43,19 @@ dependancies needed for application.
 DI is "NOT" a service locator. it is exact opostive of it. it is a way to structure code so that you never have to imperativly ask for
 dependencies, Rather you requre consumers to supply them.
 
+
+### Testability
+Unit Tests provide rapid feedback on the state of an application, but it is only possible to write unit tests when the unit in question
+can be properly isolated from its Dependencies.
+
+It's only when application is susceptible to unit testing that it's considered Testable, the safest way to ensure Testability is to develop
+using TDD.
+
+Unit tests alone don't ensure a working application.
+
+
+### Seams
+Everywhere you decide to program agains an Abstraction instead of concrete type, you introduce a Seam into application.
+
+A Seam is a place where an application is assembled from its constituent parts, similar to the way a piece of clothing is sewn
+together at its seams. It's also the place where you can dissasemble the application and work with modules in isolation.

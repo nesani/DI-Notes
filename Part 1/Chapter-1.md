@@ -59,3 +59,29 @@ Everywhere you decide to program agains an Abstraction instead of concrete type,
 
 A Seam is a place where an application is assembled from its constituent parts, similar to the way a piece of clothing is sewn
 together at its seams. It's also the place where you can dissasemble the application and work with modules in isolation.
+
+### Stable Dependancies
+The Important criteria for stable dependencies include the following
+
+- The Class or module already exists
+- New version does not contain breaking changes
+- The types in question contain deterministic algorithm
+- You never expect to: replace, wrap, decorate or intercept the class or module with another
+
+### Volatile Dependancies
+The Dependency should be considered volatile if any of the following criteria are true
+
+- The Dependency  introduces a requirement to set up and configure runtime environment for the application. (e.g Databases, message queues, web service, file system)
+- The Dependancy isnt installed on all machines in the development organizatuin (e.g expensive third party libraries or dependacies)
+- The Dependancy contains non-determistic behavior.
+
+Voilatile Dependancies are the focal point of DI. its for the voilatile dependancies that we intruduce seams into our application.
+
+## Conclusion
+Dependency injection is a means to the end, not the goal itself. It's the best way to enable loose coupling, an important part of maintainable code, the benefits are
+not always imediatly apparent, but they become visable over time as complexity of code increases.
+
+A tightly coupled code base will eventualy deteriorate into spagheti code, whereas well designed, loosely coupled code base can stay maintainable.
+
+DI is nothing more then a collection of design principles and patterns. It's more about a way of thinking and designing code than it's about tools and techniques, The
+purpose of DI is to make code maintainable.
